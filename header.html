@@ -1,0 +1,75 @@
+<?php 
+session_start();
+$url = trim($_SERVER["REQUEST_URI"], ".php"); 
+$url = trim($url, "/"); 
+?>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar
+" aria-expanded="false" aria-controls="navbar">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand"><img style="margin-top: -15%;" width=100 src="./imgs/logotranspa
+rent.png"></a>
+</div>
+<?php include './compete_modals.php' ?>
+<div id="navbar" class="collapse navbar-collapse">
+<ul class="nav navbar-nav">
+<?php 
+if ($url == "index") {
+    echo "<li class='active'><a href='./index.php'>Home</a></li>";
+} else {
+    echo "<li><a href='./index.php'>Home</a></li>";
+} if ($url == "compete") { ?>
+    <li class='active dropdown'>
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Compete </a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#" data-toggle="modal" data-target="#python_modal">Python</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#ruby_modal">Ruby</a></li>
+          </ul>
+    </li>
+<?php
+} else { ?>
+    <li class='dropdown'>
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Compete </a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#" data-toggle="modal" data-target="#python_modal">Python</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#ruby_modal">Ruby</a></li>
+          </ul>
+     </li>
+<?php
+} if ($url == "leaderboard") {
+    echo "<li class='active'><a href='./leaderboard.php'>Leaderboard</a></li>";
+} else {
+    echo "<li><a href='./leaderboard.php'>Leaderboard</a></li>";
+} 
+?>
+</ul>
+<?php if (!($_SESSION['name'])) { ?>
+<form action="./login.php" method="post" class="navbar-form navbar-right" role="search">
+<div class="form-group">
+<input type="text" class="form-control" name="username" placeholder="username">
+</div>
+<div class="form-group">
+<input type="password" class="form-control" name="password" placeholder="password">
+</div>
+<button type="submit" class="btn btn-success">Sign In</button>
+</form>
+<?php } ?>
+
+<?php if ($_SESSION['name']) { 
+$name = $_SESSION['name'];
+echo "<ul style='margin-bottom: -10px; margin-top: -5px;' class='nav navbar-nav navbar-right'>";
+echo "<li><a href='./account.php'>".$name."<img style='margin-left: 20px;' width=30 src='./avatars/".$name.".jpg'></a></li>"; 
+echo "<li><a href='logout.php'><i class='fa fa-sign-out fa-2x'></i></a></li>";
+echo "</ul>";
+}
+?>
+
+</div><!--/.nav-collapse -->
+</div>
+</nav>
