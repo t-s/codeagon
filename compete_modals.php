@@ -77,6 +77,20 @@
                 var opponent = response;
                 ok_to_move = true;
                 $.ajax({
+                    url: "start_match.php",
+                    type: "POST",
+                    async: false,
+                    data: "username=" + name + "&opponent=" + opponent + "&lang=python",
+                    success: function(response2) {
+                        //alert("success:" + response2);
+                        console.log("AJAX request was successful");
+                    },
+                    error: function(response2) {
+                        //alert("error:" + response2);
+                        console.log("AJAX request was a failure");
+                    }
+                });   
+                $.ajax({
                     url: "remove_from_queue.php",
                     type: "POST",
                     async: false,
@@ -88,21 +102,7 @@
                         console.log("AJAX request was a failure");
                     }
                 });   
-                $.ajax({
-                    url: "start_match.php",
-                    type: "POST",
-                    async: false,
-                    data: "username=" + name + "&opponent=" + opponent + "&lang=python",
-                    success: function(response2) {
-                        alert(response2);
-                        console.log("AJAX request was successful");
-                    },
-                    error: function(response2) {
-                        alert(response2);
-                        console.log("AJAX request was a failure");
-                    }
-                });   
-                //window.location.replace('./compete.php');
+                window.location.replace('./compete.php');
             }  
         }
         doPoll();
@@ -143,6 +143,18 @@
                 $('#yes_ruby_response').show();
                 ok_to_move = true;
                 var opponent = response;
+                $.ajax({
+                    url: "start_match.php",
+                    type: "POST",
+                    async: false,
+                    data: "username=" + name + "&opponent=" + opponent + "&lang=ruby",
+                    success: function(response2) {
+                        console.log("AJAX request was successful");
+                    },
+                    error: function(response2) {
+                        console.log("AJAX request was a failure");
+                    }
+                });   
                 $.ajax({                                                                                                                                                           url: "remove_from_queue.php",
                     type: "POST",
                     async: false,
@@ -154,21 +166,7 @@
                         console.log("AJAX request was a failure");
                     }
                 });
-                $.ajax({
-                    url: "start_match.php",
-                    type: "POST",
-                    async: false,
-                    data: "username=" + name + "&opponent=" + opponent + "&lang=ruby",
-                    success: function(response2) {
-                        alert(response2);
-                        console.log("AJAX request was successful");
-                    },
-                    error: function(response2) {
-                        alert(response2);
-                        console.log("AJAX request was a failure");
-                    }
-                });   
-                //window.location.replace('./compete.php');
+                window.location.replace('./compete.php');
             }  
         }
         doPoll();

@@ -2,6 +2,7 @@
 
 
    $this_user = $_POST['username'];
+   $this_opponent = $_POST['opponent'];
    $lang = $_POST['lang'];
  
    $servername = "localhost";
@@ -14,9 +15,32 @@
    $selected = mysql_select_db("codeagon", $conn)
    or die("\nCould not select db.\n");
  
-   $query = "INSERT into tbl_queue (username, language) VALUES ('".$this_user."','".$lang."')";
- 
-    mysql_query($query, $conn);
-    echo mysql_error($conn);
+   $alpha = strcasecmp($this_user,$this_opponent);
+   $player1 = "";
+   $player2 = "";
+   $player_str = "";
+   if ($alpha < 0) {
+       $player1 = $this_user;
+       $player2 = $this_opponent;  
+   } else {
+       $player1 = $this_opponent;
+       $player2 = $this_user;
+   }  
+
+   $player_str = $player1.$player2;
+   $player_hash = md5($player_str);
+
+   $query = "SELECT hash FROM tbl_matches WHERE hash='".$player_hash."';";
+   $result = mysql_query($query, $conn);
+   $count = mysql_num_rows($result);
+   if ($count < 1) {
+       $lock_query = "LOCK TABLES tbl_matches READ;";
+       //mysql_query($lock_query);
+       $query = "INSERT into tbl_matches (player1, player2, language, hash) VALUES ('".$player1."','".$player2."','".$lang."', '".$player_hash."');";
+       mysql_query($query, $conn);
+       $lock_query = "UNLOCK TABLES;";
+       //mysql_query($lock_query);
+       echo mysql_error();
+   }
 
 ?>
