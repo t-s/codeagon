@@ -1,5 +1,11 @@
 <?php include './start.html' ?>
 <?php include './header.html' ?>
+<?php 
+
+    session_start();
+    $username = $_SESSION['name'];
+
+?>
 <br><br><br>
 <h5 align=center style="font-family: 'Source Code Pro'; margin-top: -20px; color: white;">For any integer input x, write a function to sum all numbers from 1 to x.</h5>   
 <div class="container">
