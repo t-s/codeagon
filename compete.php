@@ -7,7 +7,7 @@
 
 ?>
 <br><br><br>
-<h5 align=center style="font-family: 'Source Code Pro'; margin-top: -20px; color: white;">For any integer input x, write a function to sum all numbers from 1 to x.</h5>   
+<?php include './problem.php' ?>
 <div class="container">
 <div class="starter-template" style="color: white;">
 <div class="row">
