@@ -185,7 +185,6 @@
       <div class="modal-body">
           <p>Click "Let's go!" to launch a programming problem round in Python.</p>
           <p>You'll be matched up against a similarly-ranked opponent using Python.</p>
-          <p>If none are found quickly, you'll go up against an AI in a single-player round.</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -205,7 +204,6 @@
       <div class="modal-body">
           <p>Click "Let's go!" to launch a programming problem round in Ruby.</p>
           <p>You'll be matched up against a similarly-ranked opponent using Ruby.</p>
-          <p>If none are found quickly, you'll go up against an AI in a single-player round.</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -261,7 +259,6 @@
       <div class="modal-body">
           <p>Waiting for an opponent... &nbsp;&nbsp;<img src="./imgs/spin.gif"></p>
           <p>Clicking your browser's back or refresh buttons will remove you from the queue.</p>
-          <p>If an opponent isn't found soon, you'll go up against an AI in a single player round.</p>
           <p id="yes_python_response" style="display: none;">Found <span id="op_name_python"></span>! Get ready!</p>
           <p id="no_python_response">Nobody yet.</p>
       </div>
@@ -278,7 +275,6 @@
       <div class="modal-body">
           <p>Waiting for an opponent... &nbsp;&nbsp;<img src="./imgs/spin.gif"></p>
           <p>Clicking your browser's back or refresh buttons will remove you from the queue.</p>
-          <p>If an opponent isn't found soon, you'll go up against an AI in a single player round.</p>
           <p id="yes_ruby_response" style="display: none;">Found <span id="op_name_ruby"></span>! Get ready!</p>
           <p id="no_ruby_response">Nobody yet.</p>
       </div>

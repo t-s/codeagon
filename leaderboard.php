@@ -44,7 +44,7 @@
     <div class="container">
 
       <div class="starter-template" style="color: white;">
-        <h1>Leaderboard</h1>
+        <h1 style='font-family: "Open Sans";'>Leaderboard</h1>
         <br>
         <table class="table">
         <tr><th>Username</th><th>Rating</th></tr>
