@@ -11,9 +11,10 @@
     or die("\nCould not select db.\n");
  
     $this_name = $_SESSION['name'];
-    $query = "SELECT language FROM tbl_matches WHERE player1='".$this_name."' OR player2='".$this_name."' LIMIT 1;";
+    $query = "SELECT language, problem_id FROM tbl_matches WHERE player1='".$this_name."' OR player2='".$this_name."' LIMIT 1;";
     $result = mysql_query($query);
     $row = (mysql_fetch_row($result));
     $lang = ucfirst($row[0]);
+    $pr_id = $row[1];
 
 ?>

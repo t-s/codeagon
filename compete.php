@@ -65,6 +65,8 @@ $('#submit').on('click', function() {
 </div>
 <div class="col-md-4">
 <?php include './clock.php' ?>
+<br>
+<br>
 <?php include './opponent.php' ?>
 </div>
 </div>

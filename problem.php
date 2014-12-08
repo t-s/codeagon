@@ -10,7 +10,7 @@
     $selected = mysql_select_db("codeagon", $conn)
     or die("\nCould not select db.\n");
  
-    $query = "SELECT * FROM tbl_problems ORDER BY RAND() LIMIT 1;";
+    $query = "SELECT * FROM tbl_problems WHERE id=".$pr_id.";";
     $result = mysql_query($query);
     $row = mysql_fetch_row($result);
    

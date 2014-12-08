@@ -34,10 +34,14 @@
    $result = mysql_query($query, $conn);
    $count = mysql_num_rows($result);
    if ($count < 1) {
+       $query = "SELECT * FROM tbl_problems ORDER BY RAND() LIMIT 1;";
+       $result = mysql_query($query);
+       $row = mysql_fetch_row($result);
+       $problem_id = $row[0];
        $lock_query = "LOCK TABLES tbl_matches READ;";
        //mysql_query($lock_query);
        $time = date('Y-m-d G:i:s');
-       $query = "INSERT into tbl_matches (player1, player2, language, hash, timestamp) VALUES ('".$player1."','".$player2."','".$lang."', '".$player_hash."', '".$time."');";
+       $query = "INSERT into tbl_matches (problem_id, player1, player2, language, hash, timestamp) VALUES ('".$problem_id."','".$player1."','".$player2."','".$lang."', '".$player_hash."', '".$time."');";
        mysql_query($query, $conn);
        $lock_query = "UNLOCK TABLES;";
        //mysql_query($lock_query);
