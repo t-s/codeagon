@@ -1,4 +1,4 @@
-<div id="DateCountdown" data-timer=<?php echo $row[3]; ?> style="margin-left: auto; margin-right: auto; width
+<div id="DateCountdown" data-timer=<?php echo $row[4]; ?> style="margin-left: auto; margin-right: auto; width
 : 50%;"></div>
 <script>
 $("#DateCountdown").TimeCircles({

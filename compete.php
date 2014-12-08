@@ -44,11 +44,12 @@ textarea {
 <script>
 $('#submit').on('click', function() {
     var code = encodeURIComponent($('#code').val());
+    var id = $('#problem_id').text();
     $.ajax({
         url: "submit.php",
         type: "POST",
         async: false,
-        data: "code=" + code,
+        data: "code=" + code + "&id=" + id,
         success: function(msg){
             $('#output').val(msg);
         },
@@ -59,7 +60,7 @@ $('#submit').on('click', function() {
 });
 </script>
 <br><br>
-<textarea rows=4 name="output" id="output" placeholder="Output...">
+<textarea readonly rows=4 name="output" id="output" placeholder="Output...">
 </textarea>
 </div>
 <div class="col-md-4">
