@@ -13,7 +13,7 @@
    $selected = mysql_select_db("codeagon", $conn)
    or die("\nCould not select db.\n");
    
-   $query = "SELECT * FROM tbl_users WHERE username='".$login_name."' AND password='".$login_password."';";
+   $query = "SELECT * FROM tbl_users WHERE BINARY username='".$login_name."' AND password='".$login_password."';";
 
     $result = mysql_query($query, $conn);
     if (mysql_num_rows($result) > 0) {

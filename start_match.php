@@ -36,7 +36,8 @@
    if ($count < 1) {
        $lock_query = "LOCK TABLES tbl_matches READ;";
        //mysql_query($lock_query);
-       $query = "INSERT into tbl_matches (player1, player2, language, hash) VALUES ('".$player1."','".$player2."','".$lang."', '".$player_hash."');";
+       $time = date('Y-m-d G:i:s');
+       $query = "INSERT into tbl_matches (player1, player2, language, hash, timestamp) VALUES ('".$player1."','".$player2."','".$lang."', '".$player_hash."', '".$time."');";
        mysql_query($query, $conn);
        $lock_query = "UNLOCK TABLES;";
        //mysql_query($lock_query);
