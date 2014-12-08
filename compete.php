@@ -52,9 +52,12 @@ $('#submit').on('click', function() {
         data: "code=" + code + "&id=" + id,
         success: function(msg){
             $('#output').val(msg);
+            if(msg == "You got it right!") {
+                alert("Congratulations! You won!");
+            }
         },
         error: function(msg){
-            alert(msg);
+            //alert(msg);
         }   
     });
 });

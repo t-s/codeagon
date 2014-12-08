@@ -24,7 +24,7 @@
 
     $output = file_get_contents($out_file);
 
-    if ($row[0] == $output) {
+    if ((trim((string)$row[0])) === trim(((string)$output))) {
         echo "You got it right!"; 
     } else {
         echo $output;
