@@ -6,9 +6,6 @@ $servername = "localhost";
 $username = "root";
 $password = "root";
 
-$register_name = $_POST['user_name'];
-$register_password = md5($_POST['password']);
-
 $conn = mysql_connect($servername, $username, $password)
 or die("\nUnable to connect to MySQL.\n");
 
