@@ -29,5 +29,14 @@ $("#DateCountdown").TimeCircles({
             "show": true
         }
     }
+}).addListener(function (unit, value, total) 
+{ 
+    if (total < 1) { 
+        $('#code').attr('readonly','readonly'); 
+        alert("Time is up!"); 
+    }     
 });
+
+
+
 </script>
