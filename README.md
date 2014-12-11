@@ -11,7 +11,7 @@ Programming input is handled by a sandboxed PyPy implementation. Input is saved 
 Available at the following koding.com URL: http://utkk6b01bf3c.tims.koding.io/.<br>
 Also available at www.codeagon.com, but this URL shouldn't be used for evaluation, as that URL soon will point to a Heroku instance so we can continue work on it.
 
-This application is written with rapidly prototyped PHP, with MySQL as a DB, and <br>heavy</br> use of AJAX. For the frontend, a basic Bootstrap/Jquery combo was a quick solution. For the future, we'd like to use a JS server-side framework for enhanced real-time functionality, but decided on PHP to solve a complex problem with simple bits of code.
+This application is written with rapidly prototyped PHP, with MySQL as a DB, and <strong>heavy</strong> use of AJAX. For the frontend, a basic Bootstrap/Jquery combo was a quick solution. For the future, we'd like to use a JS server-side framework for enhanced real-time functionality, but decided on PHP to solve a complex problem with simple bits of code.
 
 Note that spinning up this application separate from the above URL will need a DB init file, for problems. Would add to the repo, but do not want to be disqualified for editing anything on the VM, so that'll have to wait.
 
