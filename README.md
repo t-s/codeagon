@@ -8,7 +8,8 @@ Users sign up, click 'Compete', and then enter a queue of users to be matched up
 
 Programming input is handled by a sandboxed PyPy implementation. Input is saved to file, evaluated by PyPy, and then output is saved to a second file and returned to the user in an output window. It's also checked to see if the output matches the expected answer, and if it does, the user wins that round.
 
-Available at the following koding.com URL: http://utkk6b01bf3c.tims.koding.io/.
+Available at the following koding.com URL: http://utkk6b01bf3c.tims.koding.io/.<br>
+Also available at www.codeagon.com, but this URL shouldn't be used for evaluation, as that URL soon will point to a Heroku instance so we can continue work on it.
 
 This application is written rapidly-created PHP, with MySQL as a DB. For the frontend, a basic Bootstrap/Jquery combo was a quick solution. For the future, we'd like to use a JS server-side framework for enhanced real-time functionality, but decided on PHP to solve a complex problem with simple bits of code.
 
