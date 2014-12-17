@@ -4,7 +4,7 @@
 <?php
    $query = "SELECT username, score FROM tbl_users;";
    $result = mysqli_query($conn,$query);
-   while ($row = mysqli_fetch_array($result, MYSQL_NUM)) {
+   while ($row = mysqli_fetch_array($result)) {
        $scores[] = $row;
    }
    usort($scores, function($a, $b) {
