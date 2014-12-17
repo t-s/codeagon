@@ -1,19 +1,7 @@
 <?php include './start.html' ?>
 <?php include './header.html' ?>  
+<?php include './db.php' ?>
 <?php
- $servername = "localhost";
-   $username = "root";
-   $password = "root";
- 
-   $login_name = $_POST['username'];
-   $login_password = md5($_POST['password']);
- 
-   $conn = mysql_connect($servername, $username, $password)
-   or die("\nUnable to connect to MySQL.\n");
- 
-   $selected = mysql_select_db("codeagon", $conn)
-   or die("\nCould not select db.\n");
- 
    $query = "SELECT username, score FROM tbl_users;";
    $result = mysql_query($query, $conn);
    while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
