@@ -8,19 +8,11 @@
     file_put_contents($in_file, "print ".$code);
     system("pypy-sandbox --tmp=./ ".$in_file." > ".$out_file);
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "root";
- 
-    $conn = mysql_connect($servername, $username, $password)
-    or die("\nUnable to connect to MySQL.\n");
- 
-    $selected = mysql_select_db("codeagon", $conn)
-    or die("\nCould not select db.\n");
+    include './db.php';
  
     $query = "SELECT answer FROM tbl_problems WHERE id=".$id.";";
-    $result = mysql_query($query);
-    $row = mysql_fetch_row($result); 
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_row($result); 
 
     $output = file_get_contents($out_file);
 

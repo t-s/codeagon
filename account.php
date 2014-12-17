@@ -2,12 +2,12 @@
 <?php include './header.html' ?>
 <?php
 
-session_start();
-$logged_in = false;
-if ($_SESSION['name']) {
-    $logged_in = true;
-    $name = $_SESSION['name'];
-}
+    session_start();
+    $logged_in = false;
+    if ($_SESSION['name']) {
+        $logged_in = true;
+        $name = $_SESSION['name'];
+    }
 ?>
 <div class="container">
 <div class="row">
@@ -16,20 +16,12 @@ if ($_SESSION['name']) {
 <br><br><br>
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "root";
- 
-$conn = mysql_connect($servername, $username, $password)
-or die("\nUnable to connect to MySQL.\n");
- 
-$selected = mysql_select_db("codeagon", $conn)
-or die("\nCould not select db.\n");
+    include './db.php';
 
-$query = "SELECT score FROM tbl_users WHERE BINARY username='".$name."'";
-$result = mysql_query($query);
-$row = mysql_fetch_row($result);
-$score = $row[0];
+    $query = "SELECT score FROM tbl_users WHERE BINARY username='".$name."'";
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_row($result);
+    $score = $row[0];
 
 echo "<h4 style='margin-left:12%; color: white;'>Your score so far: &nbsp; <span style='color: #5cb85c; font-size: 150%;'>".$score."</span></h4>"; 
 ?>
