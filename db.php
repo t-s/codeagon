@@ -9,6 +9,6 @@
     $password = $url["pass"];
     $db = substr($url["path"], 1);
     $conn = mysqli_connect($server, $username, $password) or die("\nUnable to connect to MySQL.\n");
-    $selected = mysqli_select_db($db, $conn) or die("\nCould not select db.\n");
+    $selected = mysqli_select_db($conn, $db) or die("\nCould not select db.\n");
     
 ?>
