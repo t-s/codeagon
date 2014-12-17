@@ -3,8 +3,8 @@
 <?php include './db.php' ?>
 <?php
    $query = "SELECT username, score FROM tbl_users;";
-   $result = mysql_query($query, $conn);
-   while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
+   $result = mysqli_query($query, $conn);
+   while ($row = mysqli_fetch_array($result, MYSQL_NUM)) {
        $scores[] = $row;
    }
    usort($scores, function($a, $b) {
