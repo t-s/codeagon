@@ -11,9 +11,8 @@
 
     $count = mysqli_num_rows($result);
 
-    $opponent = mysqli_result($result, 0);
-
     if ($count > 0) {
+        $opponent = mysqli_fetch_row($result)[0];
         echo $opponent;
     } else {
         echo "";
