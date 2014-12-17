@@ -3,7 +3,7 @@
 <?php include './db.php' ?>
 <?php
    $query = "SELECT username, score FROM tbl_users;";
-   $result = mysqli_query($query, $conn);
+   $result = mysqli_query($conn,$query);
    while ($row = mysqli_fetch_array($result, MYSQL_NUM)) {
        $scores[] = $row;
    }
